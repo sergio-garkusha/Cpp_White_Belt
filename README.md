@@ -2,9 +2,9 @@
 by Moscow Institute of Physics and Technology & Yandex
 
 ### Goals
-- [ ] Get general understanding of modern C++ `-std=c++1y`
+- [ ] Get general understanding of modern `C++ -std=c++1y`
 - [ ] Get understanding of pros and cons in comparison with C language
-- [ ] Build fundation for being able to create C++ modules for Node.js
+- [ ] Build fundation for being able to create `C++` modules for Node.js
 
 ### Summary
 The summary will be added by me when I will finish the course.
