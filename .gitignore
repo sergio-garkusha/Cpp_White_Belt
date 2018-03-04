@@ -1,8 +1,13 @@
+# Ignore everything
 *
 
-!*.*
+# Unignore all dirs
 !*/
-!/*.cpp
 
+# Unignore specific extensions
+!*.cpp
+!*.h
+
+# Misc
 !README.md
 !.gitignore
