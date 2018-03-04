@@ -1,5 +1,8 @@
-!*
+*
 
-/*.cpp
-README.md
-/README.md
+!*.*
+!*/
+!/*.cpp
+
+!README.md
+!.gitignore
