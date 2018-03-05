@@ -44,7 +44,7 @@ The summary will be added by me when I will finish the course.
 		* `for (auto x : var_name) {cout << x;}`
 	* Usge of semicolon
 	* Eclipse (Don't work well on macOS High Sierra)
-	* Programming Assignment: `A+B` (see A+B/README.md)
+	* Programming Assignment: `A+B` (see 0xA+B/README.md)
 	* Operations: assignment
 		* concept of full deep copying
 	* Operations: division, incrementation
@@ -58,4 +58,17 @@ The summary will be added by me when I will finish the course.
 		* Logical NO (negation)	operator `!`
 		* Logical AND (conjunction) operator `&&`
 		* Logical OR (disjunction) operator `||`
-	* Programming Assignment: `Min_String` (see Min_String/README.md)
+	* Programming Assignment: `Min_String` (see 1xMin_String/README.md)
+	* Programming Assignment: `Equation` (see 2xEquation/README.md)
+	* Principles of testing
+		* Create a test plan
+		* Cover the edge cases
+		* Cover the normal cases
+	* Conditional operators and loops
+		* `if`
+		* `while`, `do {} while`
+		* `for`, `for (auto : i)`
+		* `map<string, int> dict = { {"alpha", 1}, ... };`
+		* `for (auto : i) {i.first; i.second}`
+		* break;
+	* Programming Assignment: Division (see 3xDivision/README.md)
