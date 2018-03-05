@@ -2,7 +2,7 @@
 
 #### Summary
 
-Write program that calculates the price of an item with the discount. The discount of X percent will apply if the total is greater than A $, or Y percent if the total is greater than B $.
+Write a program that calculates the price of an item with the discount. The discount of X percent will apply if the total is greater than A $, or Y percent if the total is greater than B $.
 
 The program will recieve 5 real numbers as arguments: `N, A, B, X, Y` (A < B) - where N is the initial price of an item.
 
