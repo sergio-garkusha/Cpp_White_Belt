@@ -11,3 +11,5 @@ stdin	 |  stdout
 2 4 2  |  -1
 2 1 2  |
 0 4 10 |  -2.5
+
+To compute the square root you can use the `sqrt()` function from `cmath` library: `#include <cmath>`.
