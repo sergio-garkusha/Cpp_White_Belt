@@ -1,5 +1,5 @@
 # C++: The White Belt
-by Moscow Institute of Physics and Technology & Yandex
+by Moscow Institute of Physics and Technology & Yandex (in Russian language)
 
 ### Goals
 - [ ] Get general understanding of modern `C++ -std=c++1y`
