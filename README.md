@@ -70,5 +70,5 @@ The summary will be added by me when I will finish the course.
 	* `map<string, int> dict = { {"alpha", 1}, ... };`
 	* `for (auto : i) {i.first; i.second}`
 	* break;
-16. Programming Assignment: Division (see 3xDivision/README.md)
-17. Programming Assignment: Price_Calculation (4xPrice_Calculation/README.md)
+16. Programming Assignment: `Division` (see 3xDivision/README.md)
+17. Programming Assignment: `Price_Calculation` (4xPrice_Calculation/README.md)
