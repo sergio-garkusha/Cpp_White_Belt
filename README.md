@@ -5,7 +5,7 @@ by Moscow Institute of Physics and Technology & Yandex (in Russian language)
 
 ### Goals
 - [ ] Get general understanding of modern `C++ -std=c++1y`
-- [ ] Get understanding of pros and cons in comparison with C language
+- [ ] Get understanding of pros and cons in comparison with the `C` language
 - [ ] Build fundation for being able to create `C++` modules for Node.js (and piss off my JS mates, LOL)
 
 ### Summary
