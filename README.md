@@ -1,10 +1,12 @@
-# C++: The White Belt
+# [C++: The White Belt](https://www.coursera.org/learn/c-plus-plus-white/)
 by Moscow Institute of Physics and Technology & Yandex (in Russian language)
+
+![C++: The White Belt](https://raw.githubusercontent.com/Cu7ious/Cpp_White_Belt/master/assets/CPP-White-Belt.jpg)
 
 ### Goals
 - [ ] Get general understanding of modern `C++ -std=c++1y`
 - [ ] Get understanding of pros and cons in comparison with C language
-- [ ] Build fundation for being able to create `C++` modules for Node.js
+- [ ] Build fundation for being able to create `C++` modules for Node.js (and piss off my JS mates, LOL)
 
 ### Summary
 The summary will be added by me when I will finish the course.
