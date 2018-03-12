@@ -11,4 +11,5 @@
 # Misc
 !README.md
 !*.jpg
+!*.pdf
 !.gitignore
