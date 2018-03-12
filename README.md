@@ -45,7 +45,7 @@ The summary will be added by me when I will finish the course.
 	* `for (auto x : var_name) {cout << x;}`
 6. Usge of semicolon
 7. Eclipse (Don't work well on macOS High Sierra)
-8. Programming Assignment: `A+B` (see 0xA+B/README.md)
+8. Programming Assignment: `A+B` (see `0xA+B/README.md`)
 9. Operations: assignment
 	* concept of full deep copying
 10. Operations: division, incrementation
@@ -59,8 +59,8 @@ The summary will be added by me when I will finish the course.
 	* Logical NO (negation)	operator `!`
 	* Logical AND (conjunction) operator `&&`
 	* Logical OR (disjunction) operator `||`
-12. Programming Assignment: `Min_String` (see 1xMin_String/README.md)
-13. Programming Assignment: `Equation` (see 2xEquation/README.md)
+12. Programming Assignment: `Min_String` (see `1xMin_String/README.md`)
+13. Programming Assignment: `Equation` (see `2xEquation/README.md`)
 14. Principles of testing
 	* Create a test plan
 	* Cover the edge cases
@@ -72,5 +72,19 @@ The summary will be added by me when I will finish the course.
 	* `map<string, int> dict = { {"alpha", 1}, ... };`
 	* `for (auto : i) {i.first; i.second}`
 	* break;
-16. Programming Assignment: `Division` (see 3xDivision/README.md)
-17. Programming Assignment: `Price_Calculation` (4xPrice_Calculation/README.md)
+16. Programming Assignment: `Division` (`3xDivision/README.md`)
+17. Programming Assignment: `Price_Calculation` (`Week-1/4xPrice_Calculation/README.md`)
+
+### Week #2: Functions & Containers
+1. Passing parameters by values
+2. Programming Assignment: Factorial (`Week-2/0xFactorial/README.md`)
+3. Programming Assignment: IsPalindrom (`Week-2/1xIsPalindrom/README.md`)
+4. Programming Assignment: PalindromFilter (`Week-2/2xPalindromFilter/README.md`)
+5. Passing parameters by reference (`&` symbol before type declaration)
+	* `int myfn(int& n)`
+	* `int&, string&, map<int, int>&...`
+6. Passing parameters by a constant link
+	* Constant link avoids copying of value (good for large objects)
+	* Constant link protects object from [accidental] mutations
+	* `const`
+	* `using namespace std::chrono`
