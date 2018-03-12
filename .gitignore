@@ -13,3 +13,6 @@
 !*.jpg
 !*.pdf
 !.gitignore
+
+# Ignore for specific files
+experiments.cpp
