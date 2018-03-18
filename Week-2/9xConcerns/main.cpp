@@ -73,18 +73,47 @@ void DUMP (int i)
 
 int main ()
 {
-	ADD(5, "Salary");
-	ADD(31, "Walk");
-	ADD(30, "WalkPreparations");
-	NEXT();
-	DUMP(5);
-	DUMP(28);
-	NEXT();
-	DUMP(31);
-	DUMP(30);
-	DUMP(28);
-	ADD(28, "Payment");
-	DUMP(28);
+	unsigned int Q;
+	string operation;
+
+	cin >> Q;
+
+	// ADD(5, "Salary");
+	// ADD(31, "Walk");
+	// ADD(30, "WalkPreparations");
+	// NEXT();
+	// DUMP(5);
+	// DUMP(28);
+	// NEXT();
+	// DUMP(31);
+	// DUMP(30);
+	// DUMP(28);
+	// ADD(28, "Payment");
+	// DUMP(28);
+
+	while (Q)
+	{
+		int day;
+		string task;
+
+		cin >> operation;
+		if (operation == "ADD")
+		{
+			cin >> day >> task;
+			ADD(day, task);
+		}
+		else if (operation == "NEXT")
+		{
+			NEXT();
+		}
+		else if (operation == "DUMP")
+		{
+			cin >> day;
+			DUMP(day);
+		}
+
+		Q--;
+	}
 
 	return 0;
 }
