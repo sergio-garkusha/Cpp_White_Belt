@@ -5,25 +5,19 @@
 using namespace std;
 
 int current_month = 0;
-vector<string> tasks(31, "");
-vector<int> days_numbers = {
-	31, 28, 31, 30, 31, 30,
-	31, 31, 30, 31, 30, 31
-};
+vector<vector<string>> tasks(31);
+vector<int> days_numbers = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 void ADD (int i, const string& s)
 {
 	i -= 1; // because we work with indexes
-
-	if (tasks[i].size())
-		tasks[i] += " " + s;
-	else
-		tasks[i] = s;
+	tasks[i].push_back(s);
 }
 
 void _remap_days(int prev, int next)
 {
 	int diff;
+	int tasks_count;
 
 	prev -= 1; // because we work with indexes
 	diff = (prev - next);
@@ -32,8 +26,10 @@ void _remap_days(int prev, int next)
 	{
 		if (tasks[prev - diff].size())
 		{
-			ADD(next, tasks[prev - diff]);
-			tasks[prev - diff] = "";
+			for (auto& task : tasks[prev - diff])
+				ADD(next, task);
+
+			tasks[prev - diff].clear();
 		}
 
 		diff--;
@@ -54,21 +50,15 @@ void NEXT ()
 
 void DUMP (int i)
 {
-	int counter = 0;
+	i -= 1; // because we work with indexes
 
-	i = i - 1;
-	if (tasks[i].size() > 0)
-	{	// counts spaces in the string
-		counter = count(tasks[i].begin(), tasks[i].end(), ' ');
-		counter = (!counter)
-			? 1 // if no spaces, we have 1 task
-			: counter + 1; // n spaces + 1 == n tasks
+	int counter = tasks[i].size();
 
-		cout << counter << " " << tasks[i] << endl;
-		return;
-	}
+	cout << counter;
+	for (const string& task : tasks[i])
+		cout << " " << task;
 
-	cout << counter << endl;
+	cout << endl;
 }
 
 int main ()
