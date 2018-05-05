@@ -68,22 +68,24 @@ bool operator < (const Date& lhs, const Date& rhs) {
 
 class Database {
 public:
-	int RunCommand (const string& line) {
-		if (!line.size())
-			return (0);
+	bool RunCommand (const string& line) {
+		stringstream stream(line);
 
-		string cmd = ParseStr(line, 0, ' ');
+		string cmd;
+		stream >> cmd;
+
 		string dateStr = "";
 		string event = "";
 
 		if (cmd == "Add")
 		{
 			// cout << "Command: " << cmd << endl;
-			dateStr = ParseStr(line , cmd.size() + 1, ' ');
+			stream.ignore(1);
+			stream >> dateStr;
 			const Date date = ParseDate(dateStr);
 
-			event = ParseStr(line,
-				cmd.size() + dateStr.size() + 2, '\0');
+			stream.ignore(1);
+			stream >> event;
 
 			AddEvent(date, event);
 			event = "";
@@ -91,14 +93,15 @@ public:
 		else if (cmd == "Del")
 		{
 			// cout << "Command: " << cmd << endl;
-			string dateStr = ParseStr(line , cmd.size() + 1, ' ');
+			stream.ignore(1);
+			stream >> dateStr;
 			const Date date = ParseDate(dateStr);
 
-			string event = ParseStr(line,
-				cmd.size() + dateStr.size() + 2, '\0');
+			stream.ignore(1);
+			stream >> event;
 
-			cout << "EVT: " << event << endl;
-			cout << "EVT: " << event.size() << endl;
+			// cout << "EVT: " << event << endl;
+			// cout << "EVT: " << event.size() << endl;
 
 			if (!event.size()) // !!!!!!!
 				DeleteDate(date);
@@ -109,8 +112,9 @@ public:
 		else if (cmd == "Find")
 		{
 			// cout << "Command: " << cmd << endl;
-			string dateStr = ParseStr(line , cmd.size() + 1, ' ');
-			Date date = ParseDate(dateStr);
+			stream.ignore(1);
+			stream >> dateStr;
+			const Date date = ParseDate(dateStr);
 
 			for (const string& evt : Find(date))
 				cout << evt << endl;
@@ -120,10 +124,16 @@ public:
 			// cout << "Command: " << cmd << endl;
 			Print();
 		}
+		else if (!line.size())
+		{
+			return (false);
+		}
 		else
 		{
 			throw logic_error("Unknown command: " + cmd);
 		}
+
+		return (true);
 	}
 
 	void AddEvent (const Date& date, const string& event) {
@@ -182,56 +192,31 @@ private:
 	map<Date, set<string>> db;
 
 	Date ParseDate(string date) {
-		string y = ParseStr(date, 0, '-');
+		stringstream stream(date);
 
-		// cout << "Y: " << y << endl;
+		int y;
+		stream >> y;
 
-		if (!ValidateDate(y))
+		if (stream.peek() != '-')
 			throw logic_error("Wrong date format: " + date);
 		// cout << "Year: " << y << endl;
-		string m = ParseStr(date, y.size() + 1, '-');
-		if (!ValidateDate(m))
+		int m;
+		stream.ignore(1);
+		stream >> m;
+
+		if (stream.peek() != '-')
 			throw logic_error("Wrong date format: " + date);
 		// cout << "Month: " << m << endl;
-		string d = ParseStr(date, y.size() + m.size() + 2, '\0');
-		if (!ValidateDate(d))
+		int d;
+		stream.ignore(1);
+		stream >> d;
+
+		if (!stream.eof())
 			throw logic_error("Wrong date format: " + date);
 		// cout << "Day: " << d << endl;
 
-		return (
-			Date(stoi(m), stoi(d), stoi(y))
-		);
+		return (Date(m, d, y));
 	}
-
-	bool ValidateDate (const string& date) {
-		unsigned int len = date.size();
-
-		for (unsigned int i = 0; i < len; i++)
-			if (date[i] != '-' && date[i] < '0' || date[i] > '9')
-				return (false);
-
-		return (true);
-	}
-
-	string ParseStr(const string& s, unsigned int idx, const char& sep) {
-		unsigned int i = idx;
-		string result = "";
-
-		while (s[i])
-		{
-			if (s[i] != sep)
-				result += s[i];
-			else
-				break;
-
-			i++;
-		}
-
-		// cout << "PS: " << result << endl;
-
-		return (result);
-	}
-
 };
 
 int main (void) {
@@ -241,7 +226,8 @@ int main (void) {
 	try
 	{
 		while (getline(cin, command))
-			db.RunCommand(command);
+			if (!db.RunCommand(command))
+				break;
 	}
 	catch (const exception& ex)
 	{
