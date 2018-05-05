@@ -88,3 +88,8 @@ The summary will be added by me when I will finish the course.
 	* Constant link protects object from [accidental] mutations
 	* `const`
 	* `using namespace std::chrono`
+
+
+### Links
+
+* [Fluent C++](https://www.fluentcpp.com)
