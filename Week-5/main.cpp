@@ -102,11 +102,11 @@ public:
 
 			// cout << "EVT: " << event << endl;
 			// cout << "EVT: " << event.size() << endl;
-
 			if (!event.size()) // !!!!!!!
 				DeleteDate(date);
 			else
 				DeleteEvent(date, event);
+
 			event = "";
 		}
 		else if (cmd == "Find")
@@ -126,7 +126,7 @@ public:
 		}
 		else if (!line.size())
 		{
-			return (false);
+			return (true);
 		}
 		else
 		{
